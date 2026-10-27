@@ -1,0 +1,35 @@
+{
+  "name": "workflowx",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WorkFlowX — Secure Full-Stack Team Project Management & Task Risk Platform",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "dev:api": "npm --workspace=apps/api run dev",
+    "dev:web": "npm --workspace=apps/web run dev",
+    "build": "npm run build --workspaces --if-present",
+    "build:web": "npm --workspace=apps/web run build",
+    "test": "npm --workspace=apps/api run test",
+    "prisma:generate": "node ./node_modules/prisma/build/index.js generate",
+    "prisma:migrate": "node ./node_modules/prisma/build/index.js migrate dev",
+    "prisma:deploy": "node ./node_modules/prisma/build/index.js migrate deploy",
+    "prisma:seed": "node prisma/seed.js",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "keywords": [
+    "project-management",
+    "task-risk-engine",
+    "dependency-graph",
+    "rbac",
+    "security"
+  ],
+  "author": "WorkFlowX Team",
+  "license": "MIT",
+  "devDependencies": {
+    "prisma": "^6.4.1"
+  }
+}
